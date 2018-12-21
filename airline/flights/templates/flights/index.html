@@ -1,19 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Django Flights</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
+{% extends "flights/base.html" %}
+
+{% block title %}
+Flights
+{% endblock %}
+
+{% block body %}
     <h1>Flights</h1>
     <ul>
         {% for flight in flights %}
             <li>
-                {{ flight }}
+                <a href="{% url 'flight' flight.id %}">{{ flight }}</a>
             </li>
         {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}
