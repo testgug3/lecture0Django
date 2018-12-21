@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Django Flights</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h1>Flights</h1>
+    <ul>
+        {% for flight in flights %}
+            <li>
+                {{ flight }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

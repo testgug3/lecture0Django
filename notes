@@ -1,0 +1,48 @@
+django-admin startproject projectname
+
+
+--now to add an app in this project
+--we will switch to that directory
+--then type the following
+
+
+python manage.py startapp newappname
+
+
+--to run the server
+--locate manage.py of your project directory not sub directory
+
+python manage.py runserver
+
+-- to include urls from application within project
+
+--to make migration for database
+python manage.py makemigrations
+
+--to see what code will be generate from the migration file
+python manage.py sqlmigrate flights 0001
+
+--where flights is app name and 0001 is migratio number
+
+
+--to apply migrations
+python manage.py migrate
+
+--to access django shell
+python manage.py shell
+
+--to insert data from shell
+from flights.models import Flight
+f = Flight(origin="New York",destination="London",duration=415)
+f.save() --to save the data
+
+--to query data
+Flight.objects.all() --returns a list
+Flight.objects.first() --returns the first result
+
+--to delete
+f.delete()
+
+
+
+
